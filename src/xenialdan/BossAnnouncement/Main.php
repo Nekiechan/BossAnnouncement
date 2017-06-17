@@ -109,6 +109,15 @@ class Main extends PluginBase implements Listener {
 		$text = str_replace("{hour}", date('H'), $text);
 		$text = str_replace("{minute}", date('i'), $text);
 		$text = str_replace("{second}", date('s'), $text);
+$text = str_replace("{ip}", $player->getAddress(), $text);
+$text = str_replace("{port}", $player->getPort(), $text);
+$text = str_replace("{gamemode}", $player->getGamemode(), $text);
+$text = str_replace("{version}", $player->getServer()->getPocketMineVersion(), $text);
+$text = str_replace("{servername}", $player->getServer()->getName(), $text);
+$text = str_replace("{codename}", $player->getServer()->getCodename(), $text);
+$text = str_replace("{mcpeversion}", $player->getServer()->getVersion(), $text);
+$text = str_replace("{api}", $player->getServer()->getApiVersion(), $text)
+$text = str_replace("{motd}", $player->getServer()->getMotd(), $text);
 		// preg_match_all ("/(\{.*?\})/ig", $text, $brackets);
 
 		$text = str_replace("{BLACK}", "&0", $text);
